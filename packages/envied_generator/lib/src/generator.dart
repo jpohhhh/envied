@@ -118,7 +118,7 @@ final class EnviedGenerator extends GeneratorForAnnotation<Envied> {
         field.type.nullabilitySuffix == NullabilitySuffix.question;
     if (varValue == null && !(optional && isNullable)) {
       throw InvalidGenerationSourceError(
-        'Environment variable not found for field `${field.name}`.',
+        'Environment variable not found for field `${field.name}`. Envs: $envs',
         element: field,
       );
     }
